@@ -40,7 +40,7 @@ Version : 1.1
 
 Note : Will be Developed Over Time
 
-Newly Added : Reverse IP, And Wordpress BruteForce antiBypass Captcha, And Fix Some Bugs
+Newly Added : Reverse IP, Wordpress BruteForce antiBypass Captcha, And Fix Some Bugs
 ```
 
 ## 🚀 Usage
