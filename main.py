@@ -38,7 +38,7 @@ def display_banner():
      $$  $$<  $$$$$$$$ |$$ |  $$ |$$ /  $$ | $$$$$$$ |$$ |$$  __$$\ $$ /  $$ | $$ |    
     $$  /\$$\ $$   ____|$$ |  $$ |$$ |  $$ |$$  __$$ |$$ |$$ |  $$ |$$ |  $$ | $$ |$$\ 
     $$ /  $$ |\$$$$$$$\ $$ |  $$ |$$$$$$$  |\$$$$$$$ |$$ |$$$$$$$  |\$$$$$$  | \$$$$  |
-    \__|  \__| \_______|\__|  \__|$$  ____/  \_______|\__|\_______/  \______/   \____/  v1.2.8
+    \__|  \__| \_______|\__|  \__|$$  ____/  \_______|\__|\_______/  \______/   \____/  v1.1
                                   $$ |                                                 
                                   $$ |                                                 
                                   \__|      
@@ -47,7 +47,7 @@ def display_banner():
 def display_menu():
     print("\033[94mXenpaiBot - The Ultimate Pentesting Bot \033[97m")
     print("Author : \033[1;93mKanezama")
-    print("\033[97mVersion : \033[1;92m1.2.8")
+    print("\033[97mVersion : \033[1;92m1.1")
     print("\033[97mNote : \033[1;96mUse responsibly, open source for learning.")
     print()
     print(''' 
@@ -55,7 +55,7 @@ def display_menu():
     2. WebShell Finder
     3. Checker XSS [ \033[1;93mMaintenance For Next Update \033[97m]
     4. Grabber Domain By Date v1 [ \033[1;93mMaintenance For Next Update \033[97m]
-    5. Grabber Domain By Search
+    5. Grabber Domain By Search [ \033[1;93mMaintenance For Next Update \033[97m]
     6. Generate Quotes [ \033[1;96mRandom Generates \033[97m]
     7. Marshal Encrypt/Decrypt [ \033[1;93mMaintenance For Next Update \033[97m]
     8. Reverse IP
