@@ -33,6 +33,16 @@ cd XenpaiBot
 python main.py
 ```
 
+# Read This :
+```bash
+Author : Kanezama
+Version : 1.1
+
+Note : Will be Developed Over Time
+
+Newly Added : Reverse IP, And Wordpress BruteForce antiBypass Captcha, And Fix Some Bugs
+```
+
 ## 🚀 Usage
 1. Run the application using `python main.py`
 2. Select the desired penetration testing tool.
