@@ -52,7 +52,7 @@ def display_menu():
     print()
     print(''' 
     \033[1;97m1. Brute Force WordPress
-    2. WebShell Finder
+    2. WebShell Finder [ \033[1;93mMaintenance For Next Update \033[97m]
     3. Checker XSS [ \033[1;93mMaintenance For Next Update \033[97m]
     4. Grabber Domain By Date v1 [ \033[1;93mMaintenance For Next Update \033[97m]
     5. Grabber Domain By Search [ \033[1;93mMaintenance For Next Update \033[97m]
