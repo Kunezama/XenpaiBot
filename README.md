@@ -40,7 +40,9 @@ Version : 1.1
 
 Note : Will be Developed Over Time
 
-Newly Added : Reverse IP, Wordpress BruteForce antiBypass Captcha, And Fix Some Bugs
+Newly Added : Grabber Hypestat, Grabber Haxor.ID, Grab Domain By Dorking, And Improve the appearance of ‘main.py’ and upgrade it to be cooler and more luxurious, with Fix some Bugs
+
+V1.1 / Old Version : Reverse IP, Wordpress BruteForce antiBypass Captcha, And Fix Some Bugs
 ```
 
 ## 🚀 Usage
