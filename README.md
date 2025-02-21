@@ -9,9 +9,9 @@ XenpaiBot is an advanced penetration testing bot designed to provide ethical hac
 - ✅ **Quotes Generator** – Generate random cybersecurity quotes for inspiration.
 - ✅ **WordPress Brute Force with Captcha Bypass** – Efficient brute-force attack with smart bypassing capabilities.
 - ✅ **Reverse IP Lookup** – Super-fast reverse IP tracking for security assessments.
-- ✅ **Grabber Haxor.ID**
-- ✅ **Grabber Hypestat**
-- ✅ **Grab Domain from Dorking V1**
+- ✅ **Grabber Haxor.ID** – Extract valuable data from Haxor.ID, a well-known Indonesian cybersecurity platform used for sharing security reports and exploits.
+- ✅ **Grabber Hypestat** – Retrieve detailed website analytics and ranking information from Hypestat to assist in reconnaissance and footprinting.
+- ✅ **Grab Domain from Dorking V1** – Automate domain extraction using advanced Google Dorking techniques to identify potential security risks.
 
 ## 🛠️ Technologies Used
 - **Python** – Core scripting language.
