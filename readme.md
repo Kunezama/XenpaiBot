@@ -19,6 +19,10 @@ XenpaiBot is an advanced penetration testing bot designed to provide ethical hac
 - **C/C++/C#** [ *Coming Soon* ] – Performance enhancements.
 - **Java & JavaScript** – Web-based security tools.
 
+## For Javascript Package needed
+- Arch linux ```sudo pacman -S node```
+- Debian ```sudo apt install node```
+
 ## 📦 Installation
 ```bash
 # For Termux
