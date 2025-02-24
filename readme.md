@@ -24,6 +24,7 @@ XenpaiBot is an advanced penetration testing bot designed to provide ethical hac
 # For Termux
 git clone https://github.com/Kunezama/XenpaiBot
 cd XenpaiBot
+pip install -r requirements.txt
 python main.py
 
 # For Windows CMD
@@ -33,6 +34,7 @@ py main.py
 # For Linux or Other Terminals
 git clone https://github.com/Kunezama/XenpaiBot
 cd XenpaiBot
+pip install -r requirements.txt
 python main.py
 ```
 

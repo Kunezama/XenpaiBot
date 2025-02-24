@@ -1,0 +1,4 @@
+colorama
+requests
+tqdm
+beautifulsoup4
