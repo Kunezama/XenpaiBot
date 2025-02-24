@@ -8,18 +8,6 @@ import importlib
 # XenpaiBot Is Number One 😎🔥
 REQUIRED_PACKAGES = ["colorama", "requests", "tqdm", "beautifulsoup4"]
 
-def install_packages():
-    for package in REQUIRED_PACKAGES:
-        try:
-            importlib.import_module(package)
-        except ImportError:
-            print(f"\033[1;91mPackage not installed: {package}\033[0m")
-            print(f"\033[1;93mInstalling {package}, please wait...\033[0m")
-            try:
-                subprocess.run([sys.executable, "-m", "pip", "install", package], check=True)
-            except subprocess.CalledProcessError:
-                print(f"\033[1;91mFailed to install {package}. Please install manually.\033[0m")
-
 def handle_exit(signum, frame):
     print("\n\033[1;92mGoodbye, have a nice day!\033[0m")
     sys.exit(0)
@@ -122,5 +110,4 @@ def menu():
             break
 
 if __name__ == "__main__":
-    install_packages()
     menu()
