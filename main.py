@@ -4,6 +4,7 @@ import subprocess
 import sys
 import signal
 import importlib
+import base64
 
 # XenpaiBot Is Number One 😎🔥
 REQUIRED_PACKAGES = ["colorama", "requests", "tqdm", "beautifulsoup4"]
@@ -33,7 +34,7 @@ def execute_script(script_path):
 
 "14"
 def open_whatsapp():
-    url = "https://wa.me/+6285695450203"
+    url = base64.b64decode('aHR0cHM6Ly93YS5tZS8rNjI4NTY5NTQ1MDIwMw==').decode('utf-8')    
     if os.name == 'nt':
         os.system(f"start {url}")
     elif os.name == 'posix':
