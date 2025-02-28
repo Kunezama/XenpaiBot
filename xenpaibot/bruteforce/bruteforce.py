@@ -4,16 +4,20 @@ import os
 import logging
 from concurrent.futures import ThreadPoolExecutor
 import random
+import colorama
+from colorama import Fore, Style
+
+colorama.init(autoreset=True)
 
 # ------------ CONFIGURATION ----------
 curl_timeout = 20
 multithread_limit = 10
 # -------------------------------------
 
-red = '\033[91m'
-gr = '\033[92m'
-yel = '\033[93m'
-clr = '\033[0m'
+red = Fore.RED
+gr = Fore.GREEN
+yel = Fore.YELLOW
+clr = Style.RESET_ALL
 
 logging.basicConfig(filename="bruteforce.log", level=logging.INFO, format="%(asctime)s - %(message)s")
 
@@ -84,7 +88,7 @@ def main():
           Author : \033[93mKanezama              
     ''')
         print("\033[94mThis is for Pentesters Only, Don't Try It For Illegal Things\033[0m")
-        target = input("\033[32m[!] \033[1;93mYour Site Target: \033[0m").strip()
+        target = input(Fore.GREEN + "[!]" + Fore.WHITE + "Your Site Target: " + clr).strip()
         if not target.startswith("http"):
             target = f"http://{target}"
 
