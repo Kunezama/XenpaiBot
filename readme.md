@@ -1,6 +1,6 @@
 # 🔥 XenpaiBot Projects Pentester 🔥
 
-![Project Banner](https://deposit.pictures/media/images/19/16/eb/1916eb81821340638e1987cbcaa4c2c9.jpg)
+<img src="https://deposit.pictures/media/images/b3/b8/1c/b3b81c69f63a4226bb7d856a7b135f70.jpg" alt="Project Banner" width="400"/>
 
 ## 📌 Description
 XenpaiBot is an advanced penetration testing bot designed to provide ethical hackers and security researchers with powerful tools to assess and secure web applications. Our goal is to be the **Number One Pentester Bot** in the industry.
