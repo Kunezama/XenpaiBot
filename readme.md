@@ -45,7 +45,7 @@ python main.py
 # Read This :
 ```bash
 Author : Kanezama
-Version : 1.1
+Version : 1.2
 
 Note : Will be Developed Over Time
 
