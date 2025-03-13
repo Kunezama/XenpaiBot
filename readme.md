@@ -33,8 +33,9 @@ XenpaiBot is an advanced penetration testing bot designed to provide ethical hac
 # For Termux
 git clone https://github.com/Kunezama/XenpaiBot
 cd XenpaiBot
-pip install -r requirements.txt
-python main.py
+chmod +x install.sh
+make install
+make run
 
 # For Windows CMD
 Download the script and run:
@@ -43,8 +44,9 @@ py main.py
 # For Linux or Other Terminals
 git clone https://github.com/Kunezama/XenpaiBot
 cd XenpaiBot
-pip install -r requirements.txt
-python main.py
+chmod +x install.sh
+make install
+make run
 ```
 
 # Read This :
@@ -56,7 +58,7 @@ Note : Will be Developed Over Time
 
 Newly Added : Added 6 Tools For Bug Hunter or Pentester with Super Duper Faster!, And Fix Some Bugs
 
-V1.2 : Grabber Hypestat, Grabber Haxor.ID, Grab Domain By Dorking, And Improve the appearance of ‘main.py’ and upgrade it to be cooler and more luxurious, with Fix some Bugs,
+V1.2 / Previous Version : Grabber Hypestat, Grabber Haxor.ID, Grab Domain By Dorking, And Improve the appearance of ‘main.py’ and upgrade it to be cooler and more luxurious, with Fix some Bugs,
 V1.1 / Old Version : Reverse IP, Wordpress BruteForce antiBypass Captcha, And Fix Some Bugs
 ```
 
