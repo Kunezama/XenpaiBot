@@ -39,6 +39,7 @@ make run
 
 # For Windows CMD
 Download the script and run:
+py install pip install -r requirements.txt
 py main.py
 
 # For Linux or Other Terminals
