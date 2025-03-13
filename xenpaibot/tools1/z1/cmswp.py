@@ -7,34 +7,52 @@ from colorama import Fore, Style, init
 init(autoreset=True)
 
 OUTPUT_FILE = "wordpress_sites.txt"
-WORDPRESS_PATHS = ["/wp-content/", "/wp-admin/", "/xmlrpc.php"]
-TIMEOUT = 2  # Maximum timeout (seconds)
-MAX_THREADS = 50  # Number of threads
-
+WORDPRESS_PATHS = ["/wp-content/", "/wp-admin/", "/xmlrpc.php", "/wp-json/"]
+TIMEOUT = 3  
+MAX_THREADS = 50 
 
 file_lock = threading.Lock()
 wordpress_count = 0 
 
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+}
+
+def is_wordpress(response_text):
+    wordpress_signatures = [
+        "wp-content/themes/", 
+        "wp-content/plugins/", 
+        "wp-includes/"
+    ]
+    return any(signature in response_text for signature in wordpress_signatures)
 
 def check_wordpress(url):
-    """Checks if a website is using WordPress."""
     global wordpress_count
 
     if not url.startswith("http"):
-        url = "http://" + url  # Add protocol if missing
+        url = "http://" + url  
 
     try:
         for path in WORDPRESS_PATHS:
-            response = requests.get(url + path, timeout=TIMEOUT)
-            if response.status_code == 200:
-                with file_lock:
-                    with open(OUTPUT_FILE, "a") as f:
-                        f.write(url + "\n")
-                    wordpress_count += 1  
-                print(f"{Fore.GREEN}[SUCCESS!] {url} {Fore.YELLOW}→ CMS WordPress!")
-                return  
+            response = requests.get(url + path, headers=HEADERS, timeout=TIMEOUT)
 
-        
+            if response.status_code == 200:
+                if path == "/wp-json/" and response.headers.get("Content-Type", "").startswith("application/json"):
+                    with file_lock:
+                        with open(OUTPUT_FILE, "a") as f:
+                            f.write(url + "\n")
+                        wordpress_count += 1  
+                    print(f"{Fore.GREEN}[SUCCESS!] {url} {Fore.YELLOW}→ CMS WordPress!")
+                    return
+
+                if is_wordpress(response.text):
+                    with file_lock:
+                        with open(OUTPUT_FILE, "a") as f:
+                            f.write(url + "\n")
+                        wordpress_count += 1  
+                    print(f"{Fore.GREEN}[SUCCESS!] {url} {Fore.YELLOW}→ CMS WordPress!")
+                    return
+
         print(f"{Fore.RED}[FAILED!] {url} {Fore.CYAN}→ Not WordPress!")
 
     except requests.exceptions.Timeout:
@@ -42,26 +60,23 @@ def check_wordpress(url):
     except requests.RequestException:
         print(f"{Fore.RED}[ERROR!] {url} {Fore.MAGENTA}→ Cannot be accessed!")
 
-
 def banner():
     return f"""{Fore.CYAN}
- 
  _    _______     ___      _       
 | |  | | ___ \   |_  |    | |      
 | |  | | |_/ /     | | ___| |_ ____
 | |/\| |  __/      | |/ _ \ __|_  /
 \  /\  / |     /\__/ /  __/ |_ / / 
  \/  \/\_|     \____/ \___|\__/___|
-                                                                                                                    
 {Fore.WHITE}Author : Kanezama
 """
 
 def main():
     global wordpress_count
-    wordpress_count = 0  # Reset count before each scan
+    wordpress_count = 0  
 
-    os.system("cls" if os.name == "nt" else "clear")  # Clear the terminal screen
-    print(banner())  # Print the banner correctly
+    os.system("cls" if os.name == "nt" else "clear") 
+    print(banner())
 
     print(f"{Fore.CYAN}=== Super Fast WordPress Scanner By XenpaiBot ===")
     print(f"{Fore.YELLOW}[1] Enter a website manually")
@@ -98,7 +113,6 @@ def main():
 
     else:
         print(f"{Fore.RED}Invalid option!")
-
 
 if __name__ == "__main__":
     main()
