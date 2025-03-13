@@ -11,6 +11,8 @@ from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+wordlist_path = os.path.join(BASE_DIR, "xenpaibot/bruteforce/pwd.txt")
+admin_list_path = os.path.join(BASE_DIR, "xenpaibot/tools1/admincheck/list.txt")
 
 def handle_exit(signum, frame):
     print(f"\n{Fore.GREEN}Goodbye, have a nice day!{Style.RESET_ALL}")
@@ -21,7 +23,6 @@ def clear_screen():
 
 def execute_script(script_path: str):
     full_script_path = os.path.join(BASE_DIR, script_path)
-
     if not os.path.exists(full_script_path):
         print(f"{Fore.RED}Error: Script not found at {full_script_path}.{Style.RESET_ALL}")
         return
@@ -44,13 +45,7 @@ def open_whatsapp():
         url = base64.b64decode(decoded_once).decode('utf-8')
 
         print(f"{Fore.GREEN}[INFO] Opening WhatsApp contact...{Style.RESET_ALL}")
-
-        if os.name == "nt":
-            os.system(f"start {url}")
-        elif os.name == "posix":
-            os.system(f"xdg-open {url}")
-        else:
-            os.system(f"open {url}")
+        os.system(f"start {url}" if os.name == "nt" else f"xdg-open {url}")
 
     except Exception as e:
         print(f"{Fore.RED}Error: {e}{Style.RESET_ALL}")
@@ -96,17 +91,17 @@ def menu():
         print(f"\033[1;97m{Fore.WHITE}Support : {Fore.GREEN}SABUN BOLONG CYBER CLUB {Fore.MAGENTA}[ {Fore.GREEN}SBCC {Fore.MAGENTA}] {Fore.WHITE}| {Fore.GREEN}JABAR ERROR SYSTEM {Fore.MAGENTA}[ {Fore.GREEN}JES {Fore.MAGENTA}]")
         print(f"\033[1;97m{Fore.WHITE}Telegram : {Fore.YELLOW}t.me/@TitanSi_KangWebShell")
         print(f"\033[1;97m{Fore.WHITE}Note : {Fore.CYAN}Use responsibly, open source for learning.{Fore.WHITE}\n")
-        print(f"\033[1;97m{Fore.WHITE}[ {Fore.CYAN}1 {Fore.WHITE}] BRUTE FORCE WORDPRESS {Fore.MAGENTA}({Fore.BLUE}AUTO MASS TARGET{Fore.MAGENTA}){Style.RESET_ALL} {Fore.BLUE}({Fore.CYAN}V3{Fore.BLUE}) → {Fore.YELLOW}Update! {Style.RESET_ALL}")
-        print(f"\033[1;97m{Fore.WHITE}[ {Fore.CYAN}2 {Fore.WHITE}] GRAB DOMAIN BY DORKING V1 ({Fore.MAGENTA}JavaScript{Fore.WHITE})")
-        print(f"\033[1;97m{Fore.WHITE}[ {Fore.CYAN}3 {Fore.WHITE}] GENERATES QUOTES")
-        print(f"\033[1;97m{Fore.WHITE}[ {Fore.CYAN}4 {Fore.WHITE}] MASS REVERSE IP")
-        print(f"\033[1;97m{Fore.WHITE}[ {Fore.CYAN}5 {Fore.WHITE}] GRABBER HYPESTAT {Fore.BLUE}({Fore.RED}Update PerMinute{Fore.BLUE}){Style.RESET_ALL}")
-        print(f"\033[1;97m{Fore.WHITE}[ {Fore.CYAN}6 {Fore.WHITE}] GRABBER HAXOR.ID")
-        print(f"\033[1;97m{Fore.WHITE}[ {Fore.CYAN}7 {Fore.WHITE}] GRABBER DEFACER.NET")
-        print(f"\033[1;97m{Fore.WHITE}[ {Fore.CYAN}8 {Fore.WHITE}] GRABBER MIRROR-H.ORG")
-        print(f"\033[1;97m{Fore.WHITE}[ {Fore.CYAN}9 {Fore.WHITE}] MASS ADMIN CHECKER")
-        print(f"\033[1;97m{Fore.WHITE}[ {Fore.CYAN}10 {Fore.WHITE}] MASS .ENV SCANNER")
-        print(f"\033[1;97m{Fore.WHITE}[ {Fore.CYAN}11 {Fore.WHITE}] MASS WORDPRESS SCANNER {Style.RESET_ALL}{Fore.BLUE}→ {Fore.YELLOW}Super Fast!")
+        print(f"\033[1;97m{Fore.WHITE}[ {Fore.CYAN}1 {Fore.WHITE}] Bruteforce Attack {Fore.BLACK}[ {Fore.MAGENTA}V3 {Fore.BLACK}] {Style.RESET_ALL}{Fore.WHITE}→ {Fore.YELLOW} Update!")
+        print(f"\033[1;97m{Fore.WHITE}[ {Fore.CYAN}2 {Fore.WHITE}] Domain Search")
+        print(f"\033[1;97m{Fore.WHITE}[ {Fore.CYAN}3 {Fore.WHITE}] Quotes Generator")
+        print(f"\033[1;97m{Fore.WHITE}[ {Fore.CYAN}4 {Fore.WHITE}] Reverse IP Lookup")
+        print(f"\033[1;97m{Fore.WHITE}[ {Fore.CYAN}5 {Fore.WHITE}] Grabber (Hypestat)")
+        print(f"\033[1;97m{Fore.WHITE}[ {Fore.CYAN}6 {Fore.WHITE}] Grabber (HaxorID)")
+        print(f"\033[1;97m{Fore.WHITE}[ {Fore.CYAN}7 {Fore.WHITE}] Grabber (DefacerNet)")
+        print(f"\033[1;97m{Fore.WHITE}[ {Fore.CYAN}8 {Fore.WHITE}] Grabber (Mirror-H)")
+        print(f"\033[1;97m{Fore.WHITE}[ {Fore.CYAN}9 {Fore.WHITE}] Admin Page Checker")
+        print(f"\033[1;97m{Fore.WHITE}[ {Fore.CYAN}10 {Fore.WHITE}] .ENV Variable Checker")
+        print(f"\033[1;97m{Fore.WHITE}[ {Fore.CYAN}11 {Fore.WHITE}] CMS WordPress Detector {Style.RESET_ALL}{Fore.CYAN}→ {Fore.YELLOW}Super Fast!")
         print(f"\033[1;97m{Fore.WHITE}[ {Fore.CYAN}99 {Fore.WHITE}] Report Bug (Redirects to WhatsApp)")
         print(f"\033[1;97m{Fore.WHITE}[ {Fore.CYAN}0 {Fore.WHITE}] Quit\n")
 
