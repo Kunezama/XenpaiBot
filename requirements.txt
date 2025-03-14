@@ -2,5 +2,7 @@ colorama
 requests
 tqdm
 beautifulsoup4
-requests-html
 rich
+httpx
+pyppeteer
+asyncio
