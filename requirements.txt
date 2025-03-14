@@ -3,6 +3,5 @@ requests
 tqdm
 beautifulsoup4
 rich
-httpx
-pyppeteer
-asyncio
+python-whois
+tldextract
