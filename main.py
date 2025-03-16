@@ -1,3 +1,4 @@
+import platform
 import time
 import os
 import subprocess
@@ -21,6 +22,10 @@ def handle_exit(signum, frame):
 def clear_screen():
     os.system("cls" if os.name == "nt" else "clear")
 
+# linux or win
+OS_WINDOWS = platform.system() == "Windows"
+PYTHON_CMD = "python" if OS_WINDOWS else "python3"
+
 def execute_script(script_path: str):
     full_script_path = os.path.join(BASE_DIR, script_path)
     if not os.path.exists(full_script_path):
@@ -28,7 +33,7 @@ def execute_script(script_path: str):
         return
 
     ext = os.path.splitext(full_script_path)[-1].lower()
-    cmd_map = {".py": "python", ".js": "node", ".sh": "bash"}
+    cmd_map = {".py": PYTHON_CMD, ".js": "node", ".sh": "bash"}
 
     if ext in cmd_map:
         try:
